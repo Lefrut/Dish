@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Theme">
+        <attr name="buttonPrimary" format="color"/>
+        <attr name="colorOnSurfaceTernary" format="color"/>
+        <attr name="colorOnSurfaceQuaternary" format="color"/>
+    </declare-styleable>
+
+</resources>
