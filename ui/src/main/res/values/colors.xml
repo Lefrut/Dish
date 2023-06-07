@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#FF000000</color>
+    <color name="black65">#A6000000</color>
+    <color name="black50">#80000000</color>
+    <color name="black40">#66000000</color>
+    <color name="gray_bottom_bar">#FFA5A9B2</color>
+    <color name="gray_primary">#FFF8F7F5</color>
+    <color name="gray_counter">#FFEFEEEC</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#3364E0</color>
+
+
+</resources>
