@@ -11,6 +11,5 @@ class BottomFragment : Fragment(R.layout.fragment_bottom) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), "Bottom frag!", Toast.LENGTH_SHORT).show()
     }
 }
