@@ -4,11 +4,14 @@ buildscript {
     project.ext{
         //versions
         nav_version = "2.5.3"
+        koin_version = "3.4.2"
+        koinAndroid_version = "3.4.2"
 
         //libs
         navigationComponent = "androidx.navigation:navigation-fragment-ktx:$nav_version"
         navigationComponentFragment = "androidx.navigation:navigation-ui-ktx:$nav_version"
-
+        koin = "io.insert-koin:koin-core:$koin_version"
+        koinAndroid = "io.insert-koin:koin-android:$koinAndroid_version"
     }
 
 }

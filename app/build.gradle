@@ -39,9 +39,11 @@ dependencies {
     implementation project(':features:home')
     implementation project(':features:basket')
 
-
     implementation project.navigationComponent
     implementation project.navigationComponentFragment
+
+    implementation project.koinAndroid
+    implementation project.koin
 
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
