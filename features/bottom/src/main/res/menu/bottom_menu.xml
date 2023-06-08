@@ -4,25 +4,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/home"
+        android:id="@id/home"
         android:icon="@drawable/home4x"
         android:title="@string/Main"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/search"
+        android:id="@id/search"
         android:icon="@drawable/search4x"
         android:title="@string/Search"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/basket"
+        android:id="@id/basket"
         android:icon="@drawable/basket4x"
         android:title="@string/Basket"
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/account"
+        android:id="@id/account"
         android:icon="@drawable/account4x"
         android:title="@string/Account"
         app:showAsAction="ifRoom" />
