@@ -1,9 +1,9 @@
 package com.dashkevich.domain
 
-import com.dashkevich.data.api.model.Category
+import com.dashkevich.data.api.model.DCategories
 
 interface DishApiRepository {
 
-    suspend fun getCategories() : Result<List<Category>>
+    suspend fun getCategories() : Result<DCategories>
 
 }

@@ -1,12 +1,12 @@
 package com.dashkevich.data.api
 
-import com.dashkevich.data.api.model.Category
+import com.dashkevich.data.api.model.DCategories
 import retrofit2.http.GET
 
 
 interface DishService {
 
     @GET(Endpoints.GET_CATEGORIES)
-    suspend fun getCategories() : List<Category>
+    suspend fun getCategories() : DCategories
 
 }
