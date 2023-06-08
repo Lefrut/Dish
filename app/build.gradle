@@ -34,6 +34,14 @@ android {
 
 dependencies {
     implementation project(':ui')
+    implementation project(':navigation')
+    implementation project(':features:bottom')
+    implementation project(':features:home')
+    implementation project(':features:basket')
+
+
+    implementation project.navigationComponent
+    implementation project.navigationComponentFragment
 
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'

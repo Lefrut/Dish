@@ -1,4 +1,18 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    project.ext{
+        //versions
+        nav_version = "2.5.3"
+
+        //libs
+        navigationComponent = "androidx.navigation:navigation-fragment-ktx:$nav_version"
+        navigationComponentFragment = "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    }
+
+}
+
 plugins {
     id 'com.android.application' version '7.3.1' apply false
     id 'com.android.library' version '7.3.1' apply false

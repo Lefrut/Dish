@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bottom" type="id"/>
+    <item name="bottom_nav_graph" type="id"/>
+
+    <item name="search" type="id"/>
+    <item name="home" type="id"/>
+    <item name="basket" type="id"/>
+    <item name="account" type="id"/>
+
+</resources>

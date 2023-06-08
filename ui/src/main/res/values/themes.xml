@@ -5,7 +5,10 @@
         <item name="colorPrimary">@color/gray_primary</item>
         <item name="colorSecondary">@color/gray_counter</item>
 
+        <item name="colorSecondaryVariant">@color/gray_bottom_bar</item>
+
         <item name="buttonPrimary">@color/blue</item>
+        <item name="borderPrimary">@color/gray_line</item>
 
         <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/black</item>

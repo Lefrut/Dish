@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Dish</string>
+    <string name="Account">Account</string>
+    <string name="Basket">Basket</string>
+    <string name="Search">Search</string>
+    <string name="Main">Main</string>
 </resources>
