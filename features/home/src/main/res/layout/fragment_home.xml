@@ -64,9 +64,32 @@
             android:layout_gravity="end"
             android:layout_marginTop="7dp"
             android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/circleImage"
             app:srcCompat="@drawable/user10x"
-            tools:ignore="ImageContrastCheck"
-            app:shapeAppearanceOverlay="@style/circleImage"/>
+            tools:ignore="ImageContrastCheck" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categories_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_circular"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="visible"
+            app:indicatorColor="?attr/buttonPrimary" />
+
 
     </FrameLayout>
 

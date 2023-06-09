@@ -1,7 +1,5 @@
 package com.dashkevich.util
 
-import android.util.Log
-
 fun <T> Result<T>.resultHandler(
     onLoading: () -> Unit,
     onSuccess: (T) -> Unit,
@@ -26,5 +24,28 @@ fun <T> Result<T>.resultHandler(
     }
     onFailure {
         onError(it.message.toString())
+    }
+}
+
+fun OperationState.stateHandler(
+    onLoading: () -> Unit,
+    onSuccess: () -> Unit,
+    onError: () -> Unit,
+    onEmptyResult: () -> Unit,
+){
+    when(this){
+        OperationState.EmptyResult -> {
+            onEmptyResult()
+        }
+        OperationState.Success -> {
+            onSuccess()
+        }
+        OperationState.Error -> {
+            onError()
+        }
+        OperationState.Loading -> {
+            onLoading()
+        }
+        OperationState.None -> {}
     }
 }
