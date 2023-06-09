@@ -22,7 +22,8 @@
                 android:layout_height="24dp"
                 android:layout_marginTop="10dp"
                 android:tint="?attr/colorOnSurface"
-                app:srcCompat="@drawable/location4x" />
+                app:srcCompat="@drawable/location4x"
+                />
 
             <Space
                 android:layout_width="4dp"
