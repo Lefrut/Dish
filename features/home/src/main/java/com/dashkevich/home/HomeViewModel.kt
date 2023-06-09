@@ -1,14 +1,11 @@
 package com.dashkevich.home
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
-import com.dashkevich.domain.DishApiRepository
+import com.dashkevich.domain.repository.DishApiRepository
 import com.dashkevich.home.model.HomeModel
 import com.dashkevich.util.BaseViewModel
 import com.dashkevich.util.OperationState
 import com.dashkevich.util.resultHandler
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
