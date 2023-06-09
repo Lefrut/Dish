@@ -1,5 +1,6 @@
 package com.dashkevich.domain.repository
 
+import android.util.Log
 import com.dashkevich.data.api.DishService
 import com.dashkevich.data.api.model.category.DCategories
 import com.dashkevich.data.api.model.dish.Dishes
@@ -30,6 +31,7 @@ class DishApiRepositoryImpl(
             dishApi.getDishes().dishes.forEach { dish ->
                 tegs += dish.tegs
             }
+            Log.d("CategoryFragment", "1.$tegs")
             tegs.toSet()
         }
     }

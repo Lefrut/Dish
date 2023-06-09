@@ -12,6 +12,8 @@ fun <T> Result<T>.resultHandler(
             is Collection<*> -> {
                 if (it.isEmpty()) {
                     onEmptyResult()
+                }else{
+                    onSuccess(it)
                 }
             }
             null -> {
