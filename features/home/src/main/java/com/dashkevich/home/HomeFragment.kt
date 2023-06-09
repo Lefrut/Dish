@@ -7,6 +7,7 @@ import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dashkevich.home.adapter.CategoryItemDelegate
 import com.dashkevich.home.adapter.categoryAdapterDelegates
@@ -25,7 +26,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val homeViewModel: HomeViewModel by viewModel()
     private val homeAdapter = ListDelegationAdapter<List<AdapterItemDelegate>>(
-        categoryAdapterDelegates(itemClickedListener = {})
+        categoryAdapterDelegates(itemClickedListener = {
+            findNavController().navigate(com.dashkevich.navigation.R.id.action_global_category)
+        })
     )
     lateinit var binding: FragmentHomeBinding
 
