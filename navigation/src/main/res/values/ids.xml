@@ -7,5 +7,6 @@
     <item name="home" type="id"/>
     <item name="basket" type="id"/>
     <item name="account" type="id"/>
+    <item name="category" type="id" />
 
 </resources>

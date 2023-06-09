@@ -4,11 +4,27 @@ buildscript {
     project.ext{
         //versions
         nav_version = "2.5.3"
+        koin_version = "3.4.2"
+        koinAndroid_version = "3.4.2"
+        retrofit_version = "2.9.0"
+        coroutine_version = "1.6.4"
+        lifecycle = "2.5.1"
+        adapter_delegates_version = "4.3.2"
+        coil_version = "2.4.0"
 
         //libs
         navigationComponent = "androidx.navigation:navigation-fragment-ktx:$nav_version"
         navigationComponentFragment = "androidx.navigation:navigation-ui-ktx:$nav_version"
-
+        koin = "io.insert-koin:koin-core:$koin_version"
+        koinAndroid = "io.insert-koin:koin-android:$koinAndroid_version"
+        retrofit_gson = "com.squareup.retrofit2:converter-gson:$retrofit_version"
+        retrofit = "com.squareup.retrofit2:retrofit:$retrofit_version"
+        coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+        coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+        vm = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+        adapterDelegates = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapter_delegates_version"
+        adapterDelegatesVB = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapter_delegates_version"
+        coil = "io.coil-kt:coil:$coil_version"
     }
 
 }

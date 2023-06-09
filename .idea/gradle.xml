@@ -11,12 +11,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/basket" />
             <option value="$PROJECT_DIR$/features/bottom" />
             <option value="$PROJECT_DIR$/features/home" />
             <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/ui" />
+            <option value="$PROJECT_DIR$/util" />
           </set>
         </option>
       </GradleProjectSettings>

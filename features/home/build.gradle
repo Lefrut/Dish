@@ -28,14 +28,33 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation project(':ui')
     implementation project(':navigation')
+    implementation project(':util')
+    implementation project(':data')
+    implementation project(':domain')
 
     implementation project.navigationComponent
     implementation project.navigationComponentFragment
+
+    implementation project.vm
+
+    implementation project.coroutines
+    implementation project.coroutinesAndroid
+
+    implementation project.koinAndroid
+    implementation project.koin
+
+    implementation project.adapterDelegates
+    implementation project.adapterDelegatesVB
+
+    implementation project.coil
 
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
