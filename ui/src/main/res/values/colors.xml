@@ -6,7 +6,7 @@
     <color name="black50">#80000000</color>
     <color name="black40">#66000000</color>
     <color name="gray_bottom_bar">#FFA5A9B2</color>
-    <color name="gray_primary">#FFF8F7F5</color>
+    <color name="gray_primary">#F8F7F5 </color>
     <color name="gray_counter">#FFEFEEEC</color>
     <color name="gray_line">#FFE8E9EC</color>
     <color name="white">#FFFFFFFF</color>

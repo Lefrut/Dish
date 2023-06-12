@@ -6,4 +6,6 @@ interface AdapterItemDelegate {
 
     fun content(): Any
 
+    fun layoutId() : Int = -1
+
 }

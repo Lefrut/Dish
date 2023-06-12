@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Dish.Light" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Dish.Light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <item name="colorPrimary">@color/gray_primary</item>
         <item name="colorSecondary">@color/gray_counter</item>
@@ -16,8 +16,8 @@
         <item name="colorOnSurfaceTernary">@color/black40</item>
         <item name="colorOnSurfaceQuaternary">@color/black65</item>
 
-        <item name="android:statusBarColor">?attr/colorOnSurface</item>
-        <item name="android:navigationBarColor">?attr/colorOnSurface</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
     </style>
 
 

@@ -30,14 +30,14 @@
 
     <style name="Dish.TextAppearance.H4" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/sf_pro_display_regular</item>
-        <item name="android:textSize">14.sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="lineHeight">14.7dp</item>
         <item name="android:letterSpacing">0.01</item>
     </style>
 
     <style name="Dish.TextAppearance.H4Variant" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textSize">14.sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="lineHeight">14.7dp</item>
         <item name="android:letterSpacing">0.01</item>
     </style>
@@ -45,16 +45,23 @@
 
     <style name="Dish.TextAppearance.H3Variant" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textSize">16.sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="lineHeight">16.8dp</item>
         <item name="android:letterSpacing">0.01</item>
     </style>
 
     <style name="Dish.TextAppearance.H3" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/sf_pro_display_medium</item>
-        <item name="android:textSize">16.sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="lineHeight">17.6dp</item>
         <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="Dish.TextAppearance.H5" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">15.4dp</item>
+        <item name="android:letterSpacing">0.01</item>
     </style>
 
 

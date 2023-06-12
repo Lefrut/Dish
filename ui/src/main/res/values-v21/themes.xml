@@ -8,6 +8,9 @@
         <item name="textAppearanceHeadline4">@style/Dish.TextAppearance.H4</item>
         <item name="textAppearanceHeadline3Variant">@style/Dish.TextAppearance.H3Variant</item>
         <item name="textAppearanceHeadline4Variant">@style/Dish.TextAppearance.H4Variant</item>
+        <item name="textAppearanceHeadline5">@style/Dish.TextAppearance.H5</item>
+
+
 
         <item name="textAppearanceSubhead1">@style/Dish.TextAppearance.Subhead1</item>
         <item name="textAppearanceTab">@style/Dish.TextAppearance.Tab</item>

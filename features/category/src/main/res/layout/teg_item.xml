@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="0dp"
-    app:cardBackgroundColor="?attr/buttonPrimary"
+    app:cardBackgroundColor="?attr/colorPrimary"
     app:cardCornerRadius="10dp">
 
     <com.google.android.material.textview.MaterialTextView
@@ -15,7 +15,7 @@
         android:gravity="center_vertical"
         android:text="@string/All_menus"
         android:textAppearance="?attr/textAppearanceHeadline4"
-        android:textColor="?attr/colorSurface"
+        android:textColor="?attr/colorOnSurface"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="16dp"/>
 

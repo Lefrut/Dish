@@ -1,5 +1,7 @@
 package com.dashkevich.util
 
+import kotlinx.coroutines.delay
+
 fun <T> Result<T>.resultHandler(
     onLoading: () -> Unit,
     onSuccess: (T) -> Unit,
@@ -7,12 +9,15 @@ fun <T> Result<T>.resultHandler(
     onEmptyResult: () -> Unit,
 ) {
     onLoading()
+    onFailure {
+        onError(it.message.toString())
+    }
     onSuccess {
         when (it) {
             is Collection<*> -> {
                 if (it.isEmpty()) {
                     onEmptyResult()
-                }else{
+                } else {
                     onSuccess(it)
                 }
             }
@@ -24,9 +29,6 @@ fun <T> Result<T>.resultHandler(
             }
         }
     }
-    onFailure {
-        onError(it.message.toString())
-    }
 }
 
 fun OperationState.stateHandler(
@@ -34,8 +36,8 @@ fun OperationState.stateHandler(
     onSuccess: () -> Unit,
     onError: () -> Unit,
     onEmptyResult: () -> Unit,
-){
-    when(this){
+) {
+    when (this) {
         OperationState.EmptyResult -> {
             onEmptyResult()
         }

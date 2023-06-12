@@ -12,4 +12,10 @@
     <string name="Asian_cuisine">Aзиатская кухня</string>
     <string name="Fish_with_vegetables_and_rice">Рыба с овощами и рисом</string>
     <string name="All_menus">Все меню</string>
+    <string name="_799">799 ₽</string>
+    <string name="_560">· 560г</string>
+    <string name="desc_product">Рыба маринованная со специями, лимонным соком, соевым соусом и запечeнная в духовке с лучком, томатами и картошечкой под золотистой майонезно-сырной шубкой</string>
+    <string name="Add_to_Cart">Добавить в корзину</string>
+    <string name="ru_currency">%1$d ₽</string>
+    <string name="weight_product_dialog">· %1$dг</string>
 </resources>

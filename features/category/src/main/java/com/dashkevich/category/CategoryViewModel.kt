@@ -7,6 +7,7 @@ import com.dashkevich.domain.repository.DishApiRepository
 import com.dashkevich.util.BaseViewModel
 import com.dashkevich.util.OperationState
 import com.dashkevich.util.resultHandler
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CategoryViewModel(
@@ -15,7 +16,11 @@ class CategoryViewModel(
 
     override fun setModel(): CategoryModel = CategoryModel()
 
-    fun getTags() = viewModelScope.launch {
+    init {
+        getTags()
+    }
+
+    private fun getTags() = viewModelScope.launch {
         dishApiRepository.getTags().resultHandler(
             onLoading = {
                 setState {
@@ -23,8 +28,11 @@ class CategoryViewModel(
                 }
             },
             onSuccess = { newTegs ->
+                val tegsList = newTegs.map { Pair(it, false) }.toMutableList()
+                val index = 0
+                tegsList[index] = tegsList[index].copy(second = true)
                 setState {
-                    copy(tegsState = OperationState.Success, tegs = newTegs)
+                    copy(tegsState = OperationState.Success, tegs = tegsList.toList())
                 }
             },
             onError = {
@@ -42,16 +50,17 @@ class CategoryViewModel(
         )
     }
 
-    fun getDishes() = viewModelScope.launch {
-        dishApiRepository.getDishes().resultHandler(
+    fun getDishes(tegs: List<String> = emptyList()) = viewModelScope.launch(Dispatchers.IO) {
+        dishApiRepository.getDishes(tegs).resultHandler(
             onLoading = {
                 setState {
                     copy(dishesState = OperationState.Loading)
                 }
             },
             onSuccess = { newDishes ->
+                Log.i("CategoryDebug", "getDishes: ${newDishes.dishes}")
                 setState {
-                    copy(dishesState = OperationState.Success, dishes = newDishes.dishes)
+                    copy(dishesState = OperationState.Success, dishes = newDishes.dishes.toSet().toList())
                 }
             },
             onError = {
@@ -65,5 +74,15 @@ class CategoryViewModel(
                 }
             }
         )
+    }
+
+    fun clickTeg(title: String) {
+        val newTegs = viewState.value.tegs.map {
+            if (it.first == title) it.copy(second = !it.second)
+            else it
+        }
+        setState {
+            copy(tegs = newTegs)
+        }
     }
 }
