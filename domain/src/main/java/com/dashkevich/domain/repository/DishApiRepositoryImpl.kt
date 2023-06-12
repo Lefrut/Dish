@@ -24,6 +24,9 @@ class DishApiRepositoryImpl(
         return coroutineCatching(dispatcher) {
             val resultDishes = mutableListOf<Dish>()
             val dishes = dishApi.getDishes()
+            if(tegs.isEmpty()){
+                return@coroutineCatching dishes
+            }
             dishes.dishes.forEach { dish ->
                 dish.tegs.forEach { dishTeg ->
                     tegs.forEach { teg ->

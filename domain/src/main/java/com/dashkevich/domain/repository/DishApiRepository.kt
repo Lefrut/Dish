@@ -7,7 +7,7 @@ interface DishApiRepository {
 
     suspend fun getCategories() : Result<DCategories>
 
-    suspend fun getDishes(tegs: List<String>): Result<Dishes>
+    suspend fun getDishes(tegs: List<String> = emptyList()): Result<Dishes>
 
     suspend fun getTags() : Result<Set<String>>
 
