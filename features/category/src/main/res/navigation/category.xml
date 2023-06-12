@@ -9,5 +9,10 @@
         android:id="@+id/categoryFragment"
         android:name="com.dashkevich.category.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
+        tools:layout="@layout/fragment_category" >
+        <argument
+            android:name="category_name"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

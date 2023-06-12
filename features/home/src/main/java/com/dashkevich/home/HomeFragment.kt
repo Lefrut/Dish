@@ -4,10 +4,12 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dashkevich.home.adapter.CategoryItemDelegate
 import com.dashkevich.home.adapter.categoryAdapterDelegates
@@ -26,8 +28,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val homeViewModel: HomeViewModel by viewModel()
     private val homeAdapter = ListDelegationAdapter<List<AdapterItemDelegate>>(
-        categoryAdapterDelegates(itemClickedListener = {
-            findNavController().navigate(com.dashkevich.navigation.R.id.action_global_category)
+        categoryAdapterDelegates(itemClickedListener = { category ->
+            val bundle = bundleOf("category_name" to category.name)
+            findNavController().navigate(com.dashkevich.navigation.R.id.action_global_category, bundle)
         })
     )
     lateinit var binding: FragmentHomeBinding
