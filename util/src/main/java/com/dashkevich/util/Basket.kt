@@ -7,7 +7,6 @@ object Basket {
 
     fun getProducts() = products
 
-    @Synchronized
     fun reduceProduct(id: Int): Boolean {
         val product = products[id] ?: return false
         products[id] = products[id]!! - 1
@@ -15,7 +14,6 @@ object Basket {
         return true
     }
 
-    @Synchronized
     fun addProduct(id: Int, price: Int = 0) {
         val product = products[id]
         if (product == null) {
@@ -27,7 +25,6 @@ object Basket {
 
     }
 
-    @Synchronized
     fun getPrice(): Int {
         var result = 0
         productsPrice.forEach { productPrice ->
@@ -37,7 +34,6 @@ object Basket {
         return result
     }
 
-    @Synchronized
     fun isEmpty(): Boolean = products.isEmpty()
 
     override fun toString(): String {

@@ -17,6 +17,6 @@
     <string name="desc_product">Рыба маринованная со специями, лимонным соком, соевым соусом и запечeнная в духовке с лучком, томатами и картошечкой под золотистой майонезно-сырной шубкой</string>
     <string name="Add_to_Cart">Добавить в корзину</string>
     <string name="ru_currency">%1$d ₽</string>
-    <string name="weight_product_dialog">· %1$dг</string>
+    <string name="weight_product_dialog"> · %1$dг</string>
     <string name="_1">1</string>
 </resources>

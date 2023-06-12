@@ -20,7 +20,7 @@
             app:cardElevation="0dp">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image_dish"
+                android:id="@+id/basket_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"/>
@@ -51,7 +51,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/price_product"
+                    android:id="@+id/basket_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_799"
@@ -59,7 +59,7 @@
                     android:textColor="?attr/colorOnSurface" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/weight_product"
+                    android:id="@+id/basket_weight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_560"
@@ -85,6 +85,7 @@
 
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/basket_minus"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="start|center_vertical"
@@ -92,6 +93,7 @@
 
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/basket_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_1"
@@ -101,6 +103,7 @@
 
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/basket_plus"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="end|center_vertical"

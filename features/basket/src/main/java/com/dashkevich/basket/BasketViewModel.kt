@@ -29,7 +29,7 @@ class BasketViewModel(private val dishApiRepository: DishApiRepository): BaseVie
                     return@filter false
                 }
                 setState {
-                    copy(dishes = newDishes)
+                    copy(basketDishes = newDishes, dishesCount = Basket.getProducts().toMap())
                 }
             },
             onEmptyResult = {
@@ -39,5 +39,11 @@ class BasketViewModel(private val dishApiRepository: DishApiRepository): BaseVie
 
             }
         )
+    }
+
+    fun updateDishesCount(){
+        setState {
+            copy(dishesCount = Basket.getProducts().toMap(), price = Basket.getPrice())
+        }
     }
 }
