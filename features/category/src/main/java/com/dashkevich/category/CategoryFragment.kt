@@ -146,5 +146,42 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
     }
 
 
+    private fun showProductDialog(
+        title: String,
+        price: Int,
+        weight: Int,
+        description: String,
+        imageUrl: String,
+        onClickHeat: () -> Unit,
+        onClickButton: () -> Unit
+    ) {
+        val productBinding = ProductDialogBinding.inflate(layoutInflater)
+        val builder = MaterialAlertDialogBuilder(
+            requireContext(),
+            com.dashkevich.ui.R.style.Widget_Dish_ProductDialog
+        )
+        with(productBinding) {
+            titleProduct.text = title
+            priceProduct.text = getString(com.dashkevich.ui.R.string.ru_currency, price)
+            weightProduct.text = getString(com.dashkevich.ui.R.string.weight_product_dialog, weight)
+            descProduct.text = description
+            imageProduct.load(imageUrl)
+
+            heartProduct.setOnClickListener {
+                onClickHeat()
+            }
+
+
+
+            buyProduct.setOnClickListener {
+                onClickButton()
+            }
+        }
+        val dialog: AlertDialog = builder.setView(productBinding.root).create()
+        dialog.show()
+
+        productBinding.closeProduct.setOnClickListener {
+            dialog.cancel()
+        }
     }
 }

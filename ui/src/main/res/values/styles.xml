@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="circleImage" parent="">
+    <style name="CircleImage" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="DialogCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="PrimaryButtonCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="Widget.Dish.ProductDialog" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/DialogCorners</item>
+    </style>
+
+    <style name="Widget.Dish.ButtonBase" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+    </style>
+
+    <style name="Widget.Dish.ButtonPrimary" parent="Widget.Dish.ButtonBase">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="backgroundTint">?attr/buttonPrimary</item>
+        <item name="android:textColor">?attr/colorSurface</item>
+        <item name="android:textAppearance">?attr/textAppearanceHeadline3</item>
+        <item name="shapeAppearance">@style/PrimaryButtonCorners</item>
+    </style>
+
+    <style name="Widget.Dish.CardBase" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">0dp</item>
     </style>
 
 </resources>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="16dp"
+    android:background="?attr/colorSurface"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="232dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="?attr/colorPrimary"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="14dp"
+            app:srcCompat="@drawable/fish_and_rice4x" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/close_product"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/close4x" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/heart_product"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="56dp"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            android:background="@android:color/transparent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/heart4x"
+                android:background="@android:color/transparent"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/Fish_with_vegetables_and_rice"
+        android:textAppearance="@style/Dish.TextAppearance.H3Variant"
+        android:textColor="?attr/colorOnSurface" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/price_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_799"
+            android:textAppearance="@style/Dish.TextAppearance.H4"
+            android:textColor="?attr/colorOnSurface" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/weight_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_560"
+            android:textAppearance="@style/Dish.TextAppearance.H4"
+            android:textColor="?attr/colorOnSurfaceTernary" />
+
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/desc_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/desc_product"
+        android:textAppearance="@style/Dish.TextAppearance.H5"
+        android:textColor="?attr/colorOnSurfaceQuaternary" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buy_product"
+        style="@style/Widget.Dish.ButtonPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginVertical="16dp"
+        android:text="@string/Add_to_Cart"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
