@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dashkevich.home.adapter.CategoryItemDelegate
 import com.dashkevich.home.adapter.categoryAdapterDelegates
+import com.dashkevich.home.adapter.decor.CategoryDecoration
 import com.dashkevich.home.databinding.FragmentHomeBinding
 import com.dashkevich.home.model.HomeModel
 import com.dashkevich.util.AdapterItemDelegate
@@ -33,7 +34,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             findNavController().navigate(com.dashkevich.navigation.R.id.action_global_category, bundle)
         })
     )
-    lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +46,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         with(binding.categoriesRv) {
             adapter = homeAdapter
             layoutManager = LinearLayoutManager(requireContext())
+            addItemDecoration(CategoryDecoration())
         }
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
