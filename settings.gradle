@@ -14,3 +14,18 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Dish"
 include ':app'
+include ':ui'
+include ':features:bottom'
+include ':navigation'
+include ':features:home'
+include ':features:basket'
+include ':data'
+include ':domain'
+include ':util'
+include ':features:category'
+include ':data'
+include ':domain'
+include ':util'
+include ':data'
+include ':domain'
+include ':util'

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Dish.V21" parent="Theme.Dish.Connect">
+        <item name="textAppearanceHeadline1">@style/Dish.TextAppearance.H1</item>
+        <item name="textAppearanceHeadline2">@style/Dish.TextAppearance.H2</item>
+        <item name="textAppearanceHeadline3">@style/Dish.TextAppearance.H3</item>
+        <item name="textAppearanceHeadline4">@style/Dish.TextAppearance.H4</item>
+        <item name="textAppearanceHeadline3Variant">@style/Dish.TextAppearance.H3Variant</item>
+        <item name="textAppearanceHeadline4Variant">@style/Dish.TextAppearance.H4Variant</item>
+        <item name="textAppearanceHeadline5">@style/Dish.TextAppearance.H5</item>
+
+
+
+        <item name="textAppearanceSubhead1">@style/Dish.TextAppearance.Subhead1</item>
+        <item name="textAppearanceTab">@style/Dish.TextAppearance.Tab</item>
+    </style>
+
+</resources>
