@@ -2,7 +2,6 @@ package com.dashkevich.basket.adapter.decor
 
 import android.graphics.Rect
 import android.view.View
-import androidx.core.view.size
 import androidx.recyclerview.widget.RecyclerView
 import com.dashkevich.basket.adapter.BasketItemDelegate
 import com.dashkevich.util.toPx

@@ -1,15 +1,9 @@
 package com.dashkevich.category.adapter.decor
 
 import android.graphics.Rect
-import android.os.Build
-import android.util.Log
 import android.view.View
-import androidx.core.view.get
-import androidx.core.view.size
 import androidx.recyclerview.widget.RecyclerView
 import com.dashkevich.category.adapter.TegItemDelegate
-import com.dashkevich.category.databinding.TegItemBinding
-import com.dashkevich.util.toDp
 import com.dashkevich.util.toPx
 import com.hannesdorfmann.adapterdelegates4.dsl.AdapterDelegateViewBindingViewHolder
 

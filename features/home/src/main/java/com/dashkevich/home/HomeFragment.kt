@@ -1,16 +1,8 @@
 package com.dashkevich.home
 
-import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Context
-import android.content.pm.PackageManager
-import android.location.LocationManager
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -24,7 +16,6 @@ import com.dashkevich.home.adapter.decor.CategoryDecoration
 import com.dashkevich.home.databinding.FragmentHomeBinding
 import com.dashkevich.home.model.HomeModel
 import com.dashkevich.util.common.AdapterItemDelegate
-import com.dashkevich.util.getCityName
 import com.dashkevich.util.getCurrentDate
 import com.dashkevich.util.stateHandler
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
