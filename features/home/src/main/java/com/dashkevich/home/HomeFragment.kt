@@ -30,7 +30,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         categoryAdapterDelegates(itemClickedListener = { category ->
             val bundle = bundleOf(getString(com.dashkevich.ui.R.string.category_name_bundle) to category.name)
             findNavController().navigate(
-                com.dashkevich.navigation.R.id.action_global_category,
+                R.id.action_homeFragment_to_category,
                 bundle
             )
         })

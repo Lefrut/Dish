@@ -9,6 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.dashkevich.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_category"
+            app:destination="@id/category" />
+    </fragment>
+    <include app:graph="@navigation/category" />
 
 </navigation>

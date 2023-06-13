@@ -8,10 +8,6 @@
     <include app:graph="@navigation/search" />
     <include app:graph="@navigation/basket" />
     <include app:graph="@navigation/account" />
-    <include app:graph="@navigation/category" />
-    <action
-        android:id="@+id/action_global_category"
-        app:destination="@id/category" />
 
 
 </navigation>
