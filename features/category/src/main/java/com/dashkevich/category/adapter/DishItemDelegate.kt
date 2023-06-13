@@ -1,14 +1,10 @@
 package com.dashkevich.category.adapter
 
-import android.graphics.drawable.Drawable
-import androidx.annotation.DrawableRes
 import coil.load
-import coil.request.Disposable
 import com.dashkevich.category.R
 import com.dashkevich.category.databinding.DishItemBinding
-import com.dashkevich.category.databinding.TegItemBinding
 import com.dashkevich.data.api.model.dish.Dish
-import com.dashkevich.util.AdapterItemDelegate
+import com.dashkevich.util.common.AdapterItemDelegate
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 class DishItemDelegate(

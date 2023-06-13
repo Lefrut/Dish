@@ -3,8 +3,8 @@ package com.dashkevich.basket
 import androidx.lifecycle.viewModelScope
 import com.dashkevich.basket.model.BasketModel
 import com.dashkevich.domain.repository.DishApiRepository
-import com.dashkevich.util.BaseViewModel
-import com.dashkevich.util.Basket
+import com.dashkevich.util.common.BaseViewModel
+import com.dashkevich.util.basket.Basket
 import com.dashkevich.util.resultHandler
 import kotlinx.coroutines.launch
 

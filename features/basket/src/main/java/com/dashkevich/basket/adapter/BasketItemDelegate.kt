@@ -3,8 +3,7 @@ package com.dashkevich.basket.adapter
 import coil.load
 import com.dashkevich.basket.databinding.BasketItemBinding
 import com.dashkevich.data.api.model.dish.Dish
-import com.dashkevich.util.AdapterItemDelegate
-import com.dashkevich.util.Basket
+import com.dashkevich.util.common.AdapterItemDelegate
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 class BasketItemDelegate(val dish: Dish,val countDish: Int) : AdapterItemDelegate {

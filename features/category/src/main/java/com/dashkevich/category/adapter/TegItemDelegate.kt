@@ -1,9 +1,7 @@
 package com.dashkevich.category.adapter
 
-import android.content.res.ColorStateList
-import com.dashkevich.category.R
 import com.dashkevich.category.databinding.TegItemBinding
-import com.dashkevich.util.AdapterItemDelegate
+import com.dashkevich.util.common.AdapterItemDelegate
 import com.dashkevich.util.getColorFromAttr
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 

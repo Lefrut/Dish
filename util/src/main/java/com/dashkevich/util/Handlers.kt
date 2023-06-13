@@ -1,6 +1,6 @@
 package com.dashkevich.util
 
-import kotlinx.coroutines.delay
+import com.dashkevich.util.common.OperationState
 
 fun <T> Result<T>.resultHandler(
     onLoading: () -> Unit,

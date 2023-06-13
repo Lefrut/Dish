@@ -1,4 +1,4 @@
-package com.dashkevich.util
+package com.dashkevich.util.common
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -2,7 +2,7 @@ package com.dashkevich.home.adapter
 
 import coil.load
 import com.dashkevich.home.databinding.CategoriesItemBinding
-import com.dashkevich.util.AdapterItemDelegate
+import com.dashkevich.util.common.AdapterItemDelegate
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 

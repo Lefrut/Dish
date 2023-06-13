@@ -1,13 +1,9 @@
 package com.dashkevich.category.adapter
 
-import android.util.Log
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dashkevich.category.R
-import com.dashkevich.category.adapter.decor.TegDecoration
 import com.dashkevich.category.databinding.HorizontalTegsItemBinding
-import com.dashkevich.util.AdapterItemDelegate
+import com.dashkevich.util.common.AdapterItemDelegate
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 

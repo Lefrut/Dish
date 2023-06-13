@@ -1,4 +1,4 @@
-package com.dashkevich.util
+package com.dashkevich.util.basket
 
 object Basket {
 

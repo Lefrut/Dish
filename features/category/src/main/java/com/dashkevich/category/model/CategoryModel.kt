@@ -1,7 +1,7 @@
 package com.dashkevich.category.model
 
 import com.dashkevich.data.api.model.dish.Dish
-import com.dashkevich.util.OperationState
+import com.dashkevich.util.common.OperationState
 
 data class CategoryModel(
     val tegs: List<Pair<String, Boolean>> = emptyList(),
