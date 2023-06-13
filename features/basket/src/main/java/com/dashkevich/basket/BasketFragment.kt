@@ -1,7 +1,6 @@
 package com.dashkevich.basket
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.lifecycle.Lifecycle
@@ -28,11 +27,11 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
             itemClickedListener = {},
             onPlus = { id, price ->
                 Basket.addProduct(id, price)
-                basketViewModel.updateDishesCount()
+                basketViewModel.updateDishesCount(id)
             },
             onMinus = { id ->
                 Basket.reduceProduct(id)
-                basketViewModel.updateDishesCount()
+                basketViewModel.updateDishesCount(id)
             }
         )
     )
@@ -46,18 +45,19 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 basketViewModel.viewState.collect { basketModel ->
                     basketAdapter.items = basketModel.basketDishes.map { dish ->
-                        val countDish = basketModel.dishesCount[dish.id] ?: 0
-                        BasketItemDelegate(dish, countDish)
+                        val countDish = basketModel.dishesCount[dish.id]
+                        BasketItemDelegate(dish, countDish!!)
                     }
                     binding.basketRv.apply {
                         adapter = basketAdapter
                         layoutManager = LinearLayoutManager(requireContext())
                     }
+                    binding.basketBye.text = getString(com.dashkevich.ui.R.string.payment, basketModel.price)
 
-                    binding.basketBye.text = getString(com.dashkevich.ui.R.string.ru_currency, basketModel.price)
                 }
             }
         }
+        basketViewModel.getProductInBasket()
     }
 
 }

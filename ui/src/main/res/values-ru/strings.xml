@@ -19,4 +19,5 @@
     <string name="ru_currency">%1$d ₽</string>
     <string name="weight_product_dialog"> · %1$dг</string>
     <string name="_1">1</string>
+    <string name="payment">Оплатить %1$d ₽</string>
 </resources>

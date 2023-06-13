@@ -8,28 +8,30 @@ import com.dashkevich.util.Basket
 import com.dashkevich.util.resultHandler
 import kotlinx.coroutines.launch
 
-class BasketViewModel(private val dishApiRepository: DishApiRepository): BaseViewModel<BasketModel>() {
+class BasketViewModel(private val dishApiRepository: DishApiRepository) :
+    BaseViewModel<BasketModel>() {
     override fun setModel(): BasketModel = BasketModel()
 
-    init {
-        getProductInBasket()
-    }
-
-    private fun getProductInBasket()= viewModelScope.launch{
-        val idProducts = Basket.getProducts().keys
+    fun getProductInBasket() = viewModelScope.launch {
+        val basketProducts = Basket.getProducts()
         dishApiRepository.getDishes().resultHandler(
             onLoading = {
 
             },
             onSuccess = { dishes ->
-                val newDishes = dishes.dishes.filter { dish ->
-                    for(id in idProducts){
-                        if(dish.id == id) return@filter true
+                //Todo repository
+                val basketDishes = dishes.dishes.filter { dish ->
+                    for (product in basketProducts) {
+                        if (product.key == dish.id && product.value != 0) return@filter true
                     }
                     return@filter false
                 }
                 setState {
-                    copy(basketDishes = newDishes, dishesCount = Basket.getProducts().toMap())
+                    copy(
+                        basketDishes = basketDishes,
+                        dishesCount = basketProducts,
+                        price = Basket.getPrice()
+                    )
                 }
             },
             onEmptyResult = {
@@ -41,9 +43,18 @@ class BasketViewModel(private val dishApiRepository: DishApiRepository): BaseVie
         )
     }
 
-    fun updateDishesCount(){
+    fun updateDishesCount(id: Int) {
+        val mutableDishes = viewState.value.basketDishes.toMutableList()
+        if (Basket.getProducts()[id] == 0) {
+            val deletedDish = mutableDishes.first { it.id == id }
+            mutableDishes.remove(deletedDish)
+        }
         setState {
-            copy(dishesCount = Basket.getProducts().toMap(), price = Basket.getPrice())
+            copy(
+                basketDishes = mutableDishes.toList(),
+                dishesCount = Basket.getProducts().toMap(),
+                price = Basket.getPrice()
+            )
         }
     }
 }

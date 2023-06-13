@@ -6,5 +6,5 @@ import com.dashkevich.util.Basket
 data class BasketModel(
     val basketDishes: List<Dish> = emptyList(),
     val dishesCount: Map<Int, Int> = mapOf(),
-    val price: Int = Basket.getPrice()
+    val price: Int = 0
 )

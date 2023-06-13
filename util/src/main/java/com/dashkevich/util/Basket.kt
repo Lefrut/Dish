@@ -5,12 +5,15 @@ object Basket {
     private val products: MutableMap<Int, Int> = mutableMapOf()
     private val productsPrice: MutableMap<Int, Int> = mutableMapOf()
 
-    fun getProducts() = products
+    fun getProducts() = products.toMap()
 
     fun reduceProduct(id: Int): Boolean {
         val product = products[id] ?: return false
         products[id] = products[id]!! - 1
-        if (product <= 0) products.remove(id)
+        if (product <= 0) {
+            products.remove(id)
+            productsPrice.remove(id)
+        }
         return true
     }
 
