@@ -13,6 +13,7 @@ import com.dashkevich.basket.adapter.decor.BasketDecoration
 import com.dashkevich.basket.databinding.FragmentBasketBinding
 import com.dashkevich.util.AdapterItemDelegate
 import com.dashkevich.util.Basket
+import com.dashkevich.util.getCurrentDate
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -40,6 +41,7 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentBasketBinding.bind(view)
         binding.basketRv.addItemDecoration(BasketDecoration())
+        binding.basketDate.text = getCurrentDate()
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
