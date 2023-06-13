@@ -1,6 +1,7 @@
 package com.dashkevich.domain.repository
 
 import com.dashkevich.data.api.model.category.DCategories
+import com.dashkevich.data.api.model.dish.Dish
 import com.dashkevich.data.api.model.dish.Dishes
 
 interface DishApiRepository {
@@ -10,5 +11,7 @@ interface DishApiRepository {
     suspend fun getDishes(tegs: List<String> = emptyList()): Result<Dishes>
 
     suspend fun getTags() : Result<Set<String>>
+
+    suspend fun getBasketDishes(idBasketDishes : List<Int>) : Result<List<Dish>>
 
 }

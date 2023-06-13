@@ -27,12 +27,10 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         basketAdapterDelegates(
             itemClickedListener = {},
             onPlus = { id, price ->
-                Basket.addProduct(id, price)
-                basketViewModel.updateDishesCount(id)
+                basketViewModel.addDish(id, price)
             },
             onMinus = { id ->
-                Basket.reduceProduct(id)
-                basketViewModel.updateDishesCount(id)
+                basketViewModel.reduceDish(id)
             }
         )
     )
@@ -41,16 +39,13 @@ class BasketFragment : Fragment(R.layout.fragment_basket) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentBasketBinding.bind(view)
         binding.basketRv.addItemDecoration(BasketDecoration())
-
-
         binding.basketDate.text = getCurrentDate()
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 basketViewModel.viewState.collect { basketModel ->
                     basketAdapter.items = basketModel.basketDishes.map { dish ->
-                        val countDish = basketModel.dishesCount[dish.id]
-                        BasketItemDelegate(dish, countDish!!)
+                        BasketItemDelegate(dish, basketModel.dishesCount[dish.id]!!)
                     }
                     binding.basketRv.apply {
                         adapter = basketAdapter

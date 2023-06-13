@@ -6,8 +6,7 @@ import com.dashkevich.data.api.model.category.DCategories
 import com.dashkevich.data.api.model.dish.Dish
 import com.dashkevich.data.api.model.dish.Dishes
 import com.dashkevich.domain.util.coroutineCatching
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.*
 
 class DishApiRepositoryImpl(
     private val dishApi: DishService,
@@ -24,17 +23,26 @@ class DishApiRepositoryImpl(
         return coroutineCatching(dispatcher) {
             val resultDishes = mutableListOf<Dish>()
             val dishes = dishApi.getDishes()
-            if(tegs.isEmpty()){
+            if (tegs.isEmpty()) {
                 return@coroutineCatching dishes
             }
+
+            val coroutineScope = CoroutineScope(Dispatchers.IO)
+            val jobs: MutableList<Job> = mutableListOf()
+
             dishes.dishes.forEach { dish ->
-                dish.tegs.forEach { dishTeg ->
-                    tegs.forEach { teg ->
-                        if (dishTeg == teg) {
-                            resultDishes += dish
+                    dish.tegs.forEach { dishTeg ->
+                        tegs.forEach { teg ->
+                            if (dishTeg == teg) {
+                                synchronized(this) {
+                                    resultDishes += dish
+                                }
+                            }
                         }
                     }
-                }
+            }
+            jobs.forEach { job ->
+                job.join()
             }
             Dishes(resultDishes)
         }
@@ -46,8 +54,19 @@ class DishApiRepositoryImpl(
             dishApi.getDishes().dishes.forEach { dish ->
                 tegs += dish.tegs
             }
-            Log.d("CategoryFragment", "1.$tegs")
             tegs.toSet()
+        }
+    }
+
+    override suspend fun getBasketDishes(idBasketDishes: List<Int>): Result<List<Dish>> {
+        return coroutineCatching(dispatcher) {
+            val dishes = dishApi.getDishes().dishes.filter { dish ->
+                for (id in idBasketDishes) {
+                    if (id == dish.id && id != 0) return@filter true
+                }
+                return@filter false
+            }
+            dishes
         }
     }
 

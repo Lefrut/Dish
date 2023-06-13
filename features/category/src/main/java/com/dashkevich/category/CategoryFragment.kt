@@ -30,7 +30,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
 
     private lateinit var binding: FragmentCategoryBinding
     private val categoryViewModel: CategoryViewModel by viewModel()
-    private val tabsAdapter = ListDelegationAdapter<List<AdapterItemDelegate>>(
+    private val tabsAdapter = ListDelegationAdapter(
         horizontalTegsAdapterDelegates(
             itemClickedListener = {},
             tegsAdapter = ListDelegationAdapter(
@@ -43,7 +43,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
             )
         )
     )
-    private val categoryAdapter = ListDelegationAdapter<List<AdapterItemDelegate>>(
+    private val categoryAdapter = ListDelegationAdapter(
         gridDishAdapterDelegates(
             onClick = {},
             dishAdapter = ListDelegationAdapter(
@@ -54,13 +54,9 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
                         price = it.price,
                         weight = it.weight,
                         imageUrl = it.imageUrl,
-                        onClickHeat = {
-
-                        },
+                        onClickHeat = {},
                         onClickButton = {
-                            Log.i("CategoryDebug", "start products - ${Basket.getProducts().toMap()}")
                             Basket.addProduct(it.id, it.price)
-                            Log.i("CategoryDebug", "end products - ${Basket.getProducts().toMap()}")
                         }
                     )
                 }),
@@ -74,7 +70,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCategoryBinding.bind(view)
-        binding.nameCategory.text = arguments?.getString("category_name") ?: ""
+        binding.nameCategory.text = arguments?.getString(getString(com.dashkevich.ui.R.string.category_name_bundle)) ?: ""
 
         binding.backArrow.setOnClickListener {
             findNavController().popBackStack()
@@ -87,14 +83,13 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
                 }
             }
         }
-        //showProductDialog()
     }
 
     private fun CategoryModel.viewChanges() {
         val progressCircular = binding.progressCircular
         categoryAdapter.items = listOf()
-        var gridDishesItems: List<GridDishItemDelegate> = emptyList()
-        var horizontalTegsItems: List<HorizontalTegsItemDelegate> = emptyList()
+        var gridDishesItems: List<GridDishItemDelegate>
+        var horizontalTegsItems: List<HorizontalTegsItemDelegate>
         tegsState.stateHandler(
             onError = {
 
@@ -105,13 +100,11 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
                 horizontalTegsItems = listOf(
                     HorizontalTegsItemDelegate(tegs.map { TegItemDelegate(it.first, it.second) })
                 )
-                try {
+                kotlin.runCatching {
+
                     categoryViewModel.getDishes(
-                        categoryViewModel.viewState.value.tegs
-                            .filter { it.second }
-                            .map { it.first }
+                        categoryViewModel.viewState.value.tegs.filter { it.second }.map { it.first }
                     )
-                } catch (_: Exception) {
                 }
                 tabsAdapter.items = horizontalTegsItems
                 with(binding.tabsRv) {
@@ -167,22 +160,14 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
             weightProduct.text = getString(com.dashkevich.ui.R.string.weight_product_dialog, weight)
             descProduct.text = description
             imageProduct.load(imageUrl)
-
             heartProduct.setOnClickListener {
                 onClickHeat()
             }
-
-
-
-
         }
         val dialog: AlertDialog = builder.setView(productBinding.root).create()
         dialog.show()
 
-        productBinding.closeProduct.setOnClickListener {
-            dialog.cancel()
-        }
-
+        productBinding.closeProduct.setOnClickListener { dialog.cancel() }
         productBinding.buyProduct.setOnClickListener {
             onClickButton()
             dialog.cancel()

@@ -18,7 +18,7 @@ class HomeViewModel(
         getCategories()
     }
 
-    fun getCategories() = viewModelScope.launch() {
+    private fun getCategories() = viewModelScope.launch() {
         dishApiRepository.getCategories().resultHandler(
             onLoading = {
                 setState {
@@ -36,7 +36,7 @@ class HomeViewModel(
                     copy(categoriesState = OperationState.EmptyResult)
                 }
             },
-            onError = { error ->
+            onError = { _ ->
                 setState {
                     copy(categoriesState = OperationState.Error)
                 }

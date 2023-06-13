@@ -58,7 +58,6 @@ class CategoryViewModel(
                 }
             },
             onSuccess = { newDishes ->
-                Log.i("CategoryDebug", "getDishes: ${newDishes.dishes}")
                 setState {
                     copy(dishesState = OperationState.Success, dishes = newDishes.dishes.toSet().toList())
                 }

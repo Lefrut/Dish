@@ -15,7 +15,6 @@ import com.dashkevich.home.adapter.categoryAdapterDelegates
 import com.dashkevich.home.adapter.decor.CategoryDecoration
 import com.dashkevich.home.databinding.FragmentHomeBinding
 import com.dashkevich.home.model.HomeModel
-import com.dashkevich.util.common.AdapterItemDelegate
 import com.dashkevich.util.getCurrentDate
 import com.dashkevich.util.stateHandler
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
@@ -27,9 +26,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
     private val homeViewModel: HomeViewModel by viewModel()
-    private val homeAdapter = ListDelegationAdapter<List<AdapterItemDelegate>>(
+    private val homeAdapter = ListDelegationAdapter(
         categoryAdapterDelegates(itemClickedListener = { category ->
-            val bundle = bundleOf("category_name" to category.name)
+            val bundle = bundleOf(getString(com.dashkevich.ui.R.string.category_name_bundle) to category.name)
             findNavController().navigate(
                 com.dashkevich.navigation.R.id.action_global_category,
                 bundle
@@ -42,9 +41,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
-
-//        binding.cityHome.text = getCityName(requireContext(), )
-
 
         binding.dateHome.text = getCurrentDate()
 

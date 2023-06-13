@@ -13,37 +13,41 @@ class BasketViewModel(private val dishApiRepository: DishApiRepository) :
     override fun setModel(): BasketModel = BasketModel()
 
     fun getProductInBasket() = viewModelScope.launch {
-        val basketProducts = Basket.getProducts()
-        dishApiRepository.getDishes().resultHandler(
-            onLoading = {
-
-            },
+        val basketProducts = Basket.getProducts().keys
+        dishApiRepository.getBasketDishes(basketProducts.toList()).resultHandler(
+            onLoading = {},
             onSuccess = { dishes ->
-                //Todo repository
-                val basketDishes = dishes.dishes.filter { dish ->
-                    for (product in basketProducts) {
-                        if (product.key == dish.id && product.value != 0) return@filter true
-                    }
-                    return@filter false
-                }
                 setState {
                     copy(
-                        basketDishes = basketDishes,
-                        dishesCount = basketProducts,
+                        basketDishes = dishes.filter { dish ->
+                            Basket.getProducts().forEach {
+                                if (it.key == dish.id) {
+                                    if (it.value > 0) return@filter true
+                                }
+                            }
+                            return@filter false
+                        },
+                        dishesCount = Basket.getProducts(),
                         price = Basket.getPrice()
                     )
                 }
             },
-            onEmptyResult = {
-
-            },
-            onError = {
-
-            }
+            onEmptyResult = {},
+            onError = {}
         )
     }
 
-    fun updateDishesCount(id: Int) {
+    fun reduceDish(id: Int) {
+        Basket.reduceProduct(id)
+        updateBasketDishes(id)
+    }
+
+    fun addDish(id: Int, price: Int) {
+        Basket.addProduct(id, price)
+        updateBasketDishes(id)
+    }
+
+    private fun updateBasketDishes(id: Int) {
         val mutableDishes = viewState.value.basketDishes.toMutableList()
         if (Basket.getProducts()[id] == 0) {
             val deletedDish = mutableDishes.first { it.id == id }
