@@ -14,7 +14,7 @@
 - MVVM
 - Clean arch
 - Multi-Modules
-- Navigaiton component
+- Navigation component
 - Coroutines
 - Flows
 - Koin
@@ -22,6 +22,6 @@
 - Retrofit
 - Gson
 
-## 🚧 Cтатус
+## 🚧 Статус
 Завершен.
 
