@@ -4,7 +4,7 @@
 Мобильное приложение, которое содержит в себе блюда, информацию о них.
 
 ## 🎨 Интерфейс
-<img src="https://github.com/Lefrut/Dish/blob/hot_fix-readme.md/images/home_screen.jpg" width="250" height="500"> <img src="https://github.com/Lefrut/Dish/blob/hot_fix-readme.md/images/category_screen1" width="250" height="500"> <img src="https://github.com/Lefrut/Dish/blob/hot_fix-readme.md/images/category_screen2.jpg" width="250" height="500">
+<img src="https://github.com/Lefrut/Dish/blob/hot_fix-readme.md/images/home_screen.jpg" width="250" height="500"> <img src="https://github.com/Lefrut/Dish/blob/hot_fix-readme.md/images/category_screen1.jpg" width="250" height="500"> <img src="https://github.com/Lefrut/Dish/blob/hot_fix-readme.md/images/category_screen2.jpg" width="250" height="500">
 
 <img src="https://github.com/Lefrut/Dish/blob/hot_fix-readme.md/images/category_dialog.jpg" width="250" height="500"> <img src="https://github.com/Lefrut/Dish/blob/hot_fix-readme.md/images/cart_screen.jpg" width="250" height="500">
 
