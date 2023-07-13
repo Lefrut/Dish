@@ -1,6 +1,8 @@
 package com.dashkevich.util
 
 import com.dashkevich.util.common.OperationState
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.withContext
 
 fun <T> Result<T>.resultHandler(
     onLoading: () -> Unit,
@@ -51,5 +53,14 @@ fun OperationState.stateHandler(
             onLoading()
         }
         OperationState.None -> {}
+    }
+}
+
+suspend fun <T> coroutineCatching(
+    dispatcher: CoroutineDispatcher,
+    call: suspend () -> T
+): Result<T> = runCatching {
+    withContext(dispatcher) {
+        call.invoke()
     }
 }

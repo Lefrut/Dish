@@ -1,7 +1,7 @@
 package com.dashkevich.home
 
 import androidx.lifecycle.viewModelScope
-import com.dashkevich.domain.repository.DishApiRepository
+import com.dashkevich.domain.use_case.LoadCategoriesUseCase
 import com.dashkevich.home.model.HomeModel
 import com.dashkevich.util.common.BaseViewModel
 import com.dashkevich.util.common.OperationState
@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 
 class HomeViewModel(
-    private val dishApiRepository: DishApiRepository
+    private val loadCategoriesUseCase: LoadCategoriesUseCase
 ) : BaseViewModel<HomeModel>() {
     override fun setModel(): HomeModel = HomeModel()
 
@@ -19,7 +19,7 @@ class HomeViewModel(
     }
 
     private fun getCategories() = viewModelScope.launch() {
-        dishApiRepository.getCategories().resultHandler(
+        loadCategoriesUseCase().resultHandler(
             onLoading = {
                 setState {
                     copy(categoriesState = OperationState.Loading)

@@ -1,17 +1,13 @@
 package com.dashkevich.domain.repository
 
-import com.dashkevich.data.api.model.category.DCategories
-import com.dashkevich.data.api.model.dish.Dish
-import com.dashkevich.data.api.model.dish.Dishes
+import com.dashkevich.domain.model.category.DCategories
+import com.dashkevich.domain.model.dish.Dishes
 
 interface DishApiRepository {
 
-    suspend fun getCategories() : Result<DCategories>
+    suspend fun getCategories() : DCategories
 
-    suspend fun getDishes(tegs: List<String> = emptyList()): Result<Dishes>
 
-    suspend fun getTags() : Result<Set<String>>
-
-    suspend fun getBasketDishes(idBasketDishes : List<Int>) : Result<List<Dish>>
+    suspend fun getDishes() : Dishes
 
 }

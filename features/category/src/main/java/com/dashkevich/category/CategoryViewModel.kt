@@ -1,9 +1,9 @@
 package com.dashkevich.category
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.dashkevich.category.model.CategoryModel
-import com.dashkevich.domain.repository.DishApiRepository
+import com.dashkevich.domain.use_case.LoadAllTegs
+import com.dashkevich.domain.use_case.LoadDishesByTags
 import com.dashkevich.util.common.BaseViewModel
 import com.dashkevich.util.common.OperationState
 import com.dashkevich.util.resultHandler
@@ -11,17 +11,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CategoryViewModel(
-    private val dishApiRepository: DishApiRepository
+    private val loadDishesByTags: LoadDishesByTags, private val loadAllTegs: LoadAllTegs
 ) : BaseViewModel<CategoryModel>() {
 
-    override fun setModel(): CategoryModel = CategoryModel()
+    override fun setModel() : CategoryModel = CategoryModel()
 
     init {
         getTags()
     }
 
     private fun getTags() = viewModelScope.launch {
-        dishApiRepository.getTags().resultHandler(
+        loadAllTegs().resultHandler(
             onLoading = {
                 setState {
                     copy(tegsState = OperationState.Loading)
@@ -51,7 +51,7 @@ class CategoryViewModel(
     }
 
     fun getDishes(tegs: List<String> = emptyList()) = viewModelScope.launch(Dispatchers.IO) {
-        dishApiRepository.getDishes(tegs).resultHandler(
+        loadDishesByTags(tegs).resultHandler(
             onLoading = {
                 setState {
                     copy(dishesState = OperationState.Loading)
@@ -59,7 +59,7 @@ class CategoryViewModel(
             },
             onSuccess = { newDishes ->
                 setState {
-                    copy(dishesState = OperationState.Success, dishes = newDishes.dishes.toSet().toList())
+                    copy(dishesState = OperationState.Success, dishes = newDishes.toSet().toList())
                 }
             },
             onError = {

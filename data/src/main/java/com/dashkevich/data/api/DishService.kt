@@ -1,7 +1,7 @@
 package com.dashkevich.data.api
 
-import com.dashkevich.data.api.model.category.DCategories
-import com.dashkevich.data.api.model.dish.Dishes
+import com.dashkevich.domain.model.category.DCategories
+import com.dashkevich.domain.model.dish.Dishes
 import retrofit2.http.GET
 
 

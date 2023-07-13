@@ -1,6 +1,6 @@
 package com.dashkevich.category.model
 
-import com.dashkevich.data.api.model.dish.Dish
+import com.dashkevich.domain.model.dish.Dish
 import com.dashkevich.util.common.OperationState
 
 data class CategoryModel(

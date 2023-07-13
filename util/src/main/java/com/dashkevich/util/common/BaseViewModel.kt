@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-abstract class BaseViewModel<M> : ViewModel() {
+abstract class BaseViewModel<M>() : ViewModel() {
 
     private val initialState: M by lazy { setModel() }
 

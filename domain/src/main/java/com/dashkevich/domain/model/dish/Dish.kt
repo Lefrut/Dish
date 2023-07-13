@@ -1,4 +1,4 @@
-package com.dashkevich.data.api.model.dish
+package com.dashkevich.domain.model.dish
 
 
 import com.google.gson.annotations.SerializedName

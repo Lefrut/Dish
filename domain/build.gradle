@@ -32,7 +32,6 @@ android {
 
 dependencies {
     implementation project(':util')
-    implementation project(':data')
 
     implementation project.retrofit
     implementation project.retrofit_gson

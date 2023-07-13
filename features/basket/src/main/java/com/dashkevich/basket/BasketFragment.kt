@@ -11,7 +11,6 @@ import com.dashkevich.basket.adapter.BasketItemDelegate
 import com.dashkevich.basket.adapter.basketAdapterDelegates
 import com.dashkevich.basket.adapter.decor.BasketDecoration
 import com.dashkevich.basket.databinding.FragmentBasketBinding
-import com.dashkevich.util.basket.Basket
 import com.dashkevich.util.common.AdapterItemDelegate
 import com.dashkevich.util.getCurrentDate
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter

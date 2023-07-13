@@ -1,4 +1,4 @@
-package com.dashkevich.data.api.model.category
+package com.dashkevich.domain.model.category
 
 
 import com.google.gson.annotations.SerializedName

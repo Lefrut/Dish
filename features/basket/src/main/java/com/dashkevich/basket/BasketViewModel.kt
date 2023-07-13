@@ -2,19 +2,18 @@ package com.dashkevich.basket
 
 import androidx.lifecycle.viewModelScope
 import com.dashkevich.basket.model.BasketModel
-import com.dashkevich.domain.repository.DishApiRepository
+import com.dashkevich.domain.use_case.LoadBasketContentUseCase
 import com.dashkevich.util.basket.Basket
 import com.dashkevich.util.common.BaseViewModel
 import com.dashkevich.util.resultHandler
 import kotlinx.coroutines.launch
 
-class BasketViewModel(private val dishApiRepository: DishApiRepository) :
+class BasketViewModel(private val loadBasketContentUseCase: LoadBasketContentUseCase) :
     BaseViewModel<BasketModel>() {
     override fun setModel(): BasketModel = BasketModel()
 
     fun getProductInBasket() = viewModelScope.launch {
-        val basketProducts = Basket.getProducts().keys
-        dishApiRepository.getBasketDishes(basketProducts.toList()).resultHandler(
+        loadBasketContentUseCase(Basket.getProducts().keys).resultHandler(
             onLoading = {},
             onSuccess = { dishes ->
                 setState {
