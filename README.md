@@ -22,6 +22,10 @@
 - Retrofit
 - Gson
 
+## Clean architecture
+<img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg" width="450" height="400">
+
+
 ## 🚧 Статус
 Завершен.
 
